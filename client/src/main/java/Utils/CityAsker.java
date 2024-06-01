@@ -135,7 +135,7 @@ public class CityAsker {
             if (!name.isBlank()){
                 return name.trim();
             }
-            else {
+            else if(name.isBlank()) {
                 return "null";
             }
         }

@@ -84,7 +84,7 @@ public class DBProvider{
         CollectionService.elementsCount = loadElCount();
 
         String query = "SELECT cities.id, cities.name, cities.x, cities.y, cities.creationdate, cities.area," +
-                "cities.population, cities.metersabovesealevel, citites.telephonecode, cities.agglomeration, cities.standardofliving, cities.governor, cities.vehicletype, users.username FROM cities JOIN users ON users.id = cities.creatorid";
+                "cities.population, cities.metersabovesealevel, cities.telephonecode, cities.agglomeration, cities.standardofliving, cities.governor, users.username FROM cities JOIN users ON users.id = cities.creatorid";
 
         try (PreparedStatement p = connection.prepareStatement(query)){
             ResultSet res = p.executeQuery();
@@ -208,21 +208,6 @@ public class DBProvider{
         }
     }
 
-    public static boolean removeCitiesByType(User user, StandardOfLiving type){
-
-        String query = "DELETE FROM cities WHERE (vehicletype = ? AND creatorid IN (SELECT id FROM users WHERE username = ?))";
-
-        try (PreparedStatement p = connection.prepareStatement(query)){
-            p.setString(1, type.getType());
-            p.setString(2, user.getUsername());
-            p.executeUpdate();
-            return true;
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return false;
-        }
-    }
 
     public static boolean clearCities(User user){
 

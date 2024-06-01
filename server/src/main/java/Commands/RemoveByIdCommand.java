@@ -11,7 +11,7 @@ public class RemoveByIdCommand implements Command{
 
     public RemoveByIdCommand(CommandKeeper commandKeeper) {
         this.commandKeeper = commandKeeper;
-        ConsoleApp.commandList.put("removeById", this);
+        ConsoleApp.commandList.put("remove_by_id", this);
     }
 
     @Override

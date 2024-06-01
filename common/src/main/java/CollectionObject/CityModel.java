@@ -29,6 +29,7 @@ public class CityModel implements Serializable {
         this.agglomeration = agglomeration;
         this.standardOfLiving = standardOfLiving;
         this.governor = governor;
+        this.user = user;
     }
 
 
@@ -65,7 +66,11 @@ public class CityModel implements Serializable {
     }
 
     public Human getGovernor() {
-        return governor;
+        if (governor != null) {
+            return governor;
+        } else {
+            return new Human("null");
+        }
     }
 
     public User getUser() {

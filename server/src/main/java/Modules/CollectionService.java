@@ -208,11 +208,11 @@ public class CollectionService {
     }
 
     public City minByCreationDate() {
-//        if (collection.isEmpty()) {
-//            System.out.println("The collection is empty. No objects to display.");
-//            return;
-//        }
-//
+        if (collection.isEmpty()) {
+            System.out.println("The collection is empty. No objects to display.");
+            return null;
+        }
+
 //        City minByCreationDateCity = Collections.min(collection, Comparator.comparing(City::getCreationDate));
 //
 //        System.out.println("Object with the minimum creation date:" + "\n" + minByCreationDateCity.toString());

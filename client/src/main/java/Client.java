@@ -169,7 +169,7 @@ public class Client {
             System.out.println("Работа клиентского приложения завершена");
             System.exit(0);
         }
-        else if (command.equalsIgnoreCase("executeScript")){
+        else if (command.equalsIgnoreCase("execute_script")){
             executeScript(arguments);
         }
         else {
@@ -256,7 +256,7 @@ public class Client {
                         command = input[0].trim();
                     }
 
-                    if (command.equalsIgnoreCase("executeScript")) {
+                    if (command.equalsIgnoreCase("execute_script")) {
                         try {
                             Path scriptNameFromArgument = Paths.get(arguments).getFileName();
 

@@ -157,7 +157,7 @@ public class Server {
             if (!request.userRegisterRequired()) {
                 if (DBProvider.checkUserExistence(user.getUsername())) {
                     if (DBProvider.checkUserPassword(user)) {
-                        response = new Response("Дарова, " + user.getUsername() + "\n", true);
+                        response = new Response("Здравствуйте, " + user.getUsername() + "\n", true);
                         logger.info("Пользователь " + user.getUsername() + " успешно аутентифицирован");
 
                     } else {
